@@ -1,9 +1,9 @@
-# Rigging-appp
+
 # Rigging app 
 ## Project Description 
-This app checks the rigging and the crane according to the DNV standerds. According to the DNV standerd the skew load factor is a standerd value. With the help of a python script it is possible to calculated this more in detail. After the calculations are done, with the help of the viktor program a automatic word document will be generated.
+This app checks the rigging and the crane according to the DNV standards. According to the DNV standerd the skew load factor is a standerd value. With the help of a python script it is possible to calculate this more in detail. After the calculations are done, with the help of the viktor program an automatic word document will be generated. The skew load factor is explained in the skewload.md document
 
-First the rigging checks were made in a excel sheet, with the help of this app it will be more easly friendly. 
+First the rigging checks were made in an excel sheet, with the help of this app it will be more user friendly. 
 
 
 ## How to install and run the project
@@ -15,13 +15,13 @@ Dit moet ik nog uitvogelen aan de hand van de documentatie van viktor
 Ik moet nog een handleiding maken, die komt hier te staan
 
 ## Workflowdiagram 
-In this chapter the workflow diagram is descibed, see below the the total workflow diagram
+In this chapter the workflow diagram is described, see below the the total workflow diagram
 ![This is a image](/Images/Workflow.jpg)
 
-In upper part of the figure is the input of the application shown, and  at the left is the data base for rigging equipment/ constants. Both these database are excel sheets and the data in these files can easily be changed. With the help of the module openpyxl the data from the excel sheet is transformed in to usefull data. 
+In the upper part of the figure the input of the application  is shown and  at the left the data bases for rigging equipment/ constants is shown. Both these database are excel sheets and the data in these files can easily be changed. With the help of the module openpyxl the data from the excel sheet is transformed to usefull data. 
 
 <br/><br/>
-The frontend of the app is consist of 5 different tabs, check next chapter what the parameters are of each tab. All the params and the data from the excel sheet are passed to the communication class. The first thing the class does is changing the params in to useful data, in which way it is stored can be seen in next chapter. When all the data is transformed, all the caluculations are done. These are:
+The frontend of the app consists of 5 different tabs, check next chapter what the parameters are of each tab. All the params and the data from the excel sheet are passed to the communication class. The first thing the class does is changing the params in to useful data, in which way it is stored can be seen in the next chapter. When all the data is transformed, all the caluculations are done. These are:
 
 - The cog envelope (Class: Calc_COG_env)
 - Load distributie/ Cog shift factor (Class: Calc_load_dis))
@@ -42,10 +42,10 @@ All the data from the parameters and the data from the results from the calulati
 
 
 <br/><br/>
-Both the skew load analysis and the make word document are not in the communication class, because every time a params is changed in one othe 5 tabs. The communcation class will be activated and those two actions takes a lot of time, this is why it is done with the help of buttons. When the skew load analysis button is pressed, first it gets the data from the communication class and the it will anlayses the skew load factor, when the analysis is done the result will be stored in a CSV file, so it can be retrieved when making the word document. 
+Both the skew load analysis and the make word document are not in the communication class, because every time a params is changed in one of the 5 tabs. The communcation class will be activated and those two actions take a lot of time, this is why it is done with the help of buttons. When the skew load analysis button is pressed, first it gets the data from the communication class and  it will anlaysis the skew load factor, when the analysis is done the result will be stored in a CSV file, so it can be retrieved when making the word document. 
 
 <br/><br/>
-When the word document button is activated, it takes all data and results from the calculations from the communcation class, also the file params. These are params such as the date/the project no/ company name.  With the help of the jinja notations, the results and data are transformed in a readable rigging check documeatations, this word document can be downloaded via the internet and can be changed where necessary. 
+When the word document button is activated, it takes all data and results from the calculations from the communcation class, also the file params. These are params such as the date/the project no/ company name.  With the help of the jinja notations, the results and data are transformed in a readable rigging check documentation, this word document can be downloaded via the internet and can be changed where necessary. 
 
 ### Input 
 The front off the app is made with the help of the viktor program, in total there are 5 different input apps: See below:
